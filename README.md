@@ -34,7 +34,7 @@ _Arduino-based · Joystick driven · 3D Printed · Web interface coming soon_
 
 ## ⚡ Overview
 
-ThermoClaw is a **handheld, 3D printed** servo claw controller built on Arduino. The enclosure and claw mechanism are fully 3D printed, housing dual servos driven from a single joystick axis with complementary motion logic — while simultaneously monitoring ambient temperature via a **10KΩ NTC thermistor** using the Steinhart-Hart B-parameter equation.
+ThermoClaw is a **handheld, 3D printed** servo claw controller. The enclosure and claw mechanism are fully 3D printed, housing dual servos driven from a single joystick axis with complementary motion logic — while simultaneously monitoring ambient temperature via a **10KΩ NTC thermistor** using the Steinhart-Hart B-parameter equation.
 
 A future revision will expose all sensor data (servo positions, live temperature) through a **browser-based web interface** for remote monitoring and control.
 
