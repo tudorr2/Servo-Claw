@@ -13,7 +13,7 @@
 
 # THERMO · CLAW · CONTROLLER
 
-**Handheld 3D printed claw controller with dual-axis servo control and real-time NTC thermistor monitoring**  
+**Handheld 3D printed claw controller with dual servo control and real-time NTC thermistor monitoring**  
 _Arduino-based · Joystick driven · 3D Printed · Web interface coming soon_
 
 <br/>
@@ -69,11 +69,11 @@ The entire chassis is **3D printed** — designed to be compact, handheld, and s
 
 | Component         | Value / Model                 | Pin  |
 | ----------------- | ----------------------------- | ---- |
-| Servo — Drive     | Standard PWM Servo            | `D2` |
-| Servo — Steer     | Standard PWM Servo            | `D4` |
-| Joystick (X-axis) | Analog joystick               | `A5` |
+| Servo             | Standard PWM Servo            | `D2` |
+| Servo             | Standard PWM Servo            | `D4` |
+| Joystick (X-axis) | Analog joystick               | `A0` |
 | Mode Switch       | Momentary button (active LOW) | `D3` |
-| NTC Thermistor    | 10KΩ @ 25°C, B=3977K          | `A2` |
+| NTC Thermistor    | 10KΩ @ 25°C, B=3977K          | `A1` |
 | Fixed Resistor    | 10KΩ (voltage divider)        | —    |
 
 <br/>
@@ -173,29 +173,6 @@ Expected ADC range at room temperature: **490 – 530**
 
 ---
 
-## 📁 Project Structure
-
-```
-thermoclaw/
-├── src/
-│   └── main.ino          # Main Arduino sketch
-├── stl/
-│   ├── body.stl          # Main handheld enclosure
-│   ├── claw_pla.stl      # Current PLA claw fingers
-│   └── claw_tpu95a.stl   # 🔜 Upcoming TPU 95A grip fingers
-├── docs/
-│   └── wiring.png        # Wiring diagram
-├── web/                  # 🚧 Web interface (upcoming)
-│   ├── index.html
-│   ├── dashboard.js
-│   └── styles.css
-└── README.md
-```
-
-<br/>
-
----
-
 ## 🌐 Upcoming: Web Interface
 
 > **Version 2.0** will introduce a live browser dashboard for remote monitoring.
@@ -264,14 +241,6 @@ Open Serial Monitor at **9600 baud** to view live temperature readings.
 | ADC reads `0` or `1023`       | Open circuit in voltage divider       | Verify both thermistor and 10KΩ resistor     |
 | Servo not moving              | Wrong pin or not attached             | Check `servodr.attached()` in Serial Monitor |
 | Temperature jittery           | ADC noise                             | Add 100nF cap between `A2` and `GND`         |
-
-<br/>
-
----
-
-## 📜 License
-
-MIT License — see [`LICENSE`](LICENSE) for details.
 
 <br/>
 
