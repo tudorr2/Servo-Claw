@@ -18,12 +18,11 @@ _Arduino-based · Joystick driven · 3D Printed · Web interface coming soon_
 
 <br/>
 
-![Arduino](https://img.shields.io/badge/Platform-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![Raspberry Pi Pico](https://img.shields.io/badge/Platform-Raspberry%20Pi%20Pico2W-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
 ![C++](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![3D Printed](https://img.shields.io/badge/Build-3D_Printed-lightgrey?style=for-the-badge&logo=printables&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 ![Web UI](https://img.shields.io/badge/Web_UI-Coming_Soon-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
 <br/>
 
