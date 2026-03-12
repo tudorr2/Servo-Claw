@@ -168,38 +168,14 @@ Temperature:    24.73C
 
 Expected ADC range at room temperature: **490 – 530**
 
-<br/>
-
----
-
-## 🌐 Upcoming: Web Interface
-
-> **Version 2.0** will introduce a live browser dashboard for remote monitoring.
-
-Planned features:
-
-- 📊 **Live temperature graph** — real-time thermistor readings plotted over time
-- 🎯 **Servo position indicators** — visual dial display for both servos
-- 🔘 **Mode status** — shows Normal vs Button-lock mode
-- 📡 **Serial-over-WebSocket** — Arduino streams data to a lightweight Node.js bridge
-- 📱 **Mobile responsive** — monitor from any device on your local network
-
-```
-Arduino (Serial) ──► Node.js bridge ──► WebSocket ──► Browser Dashboard
-```
-
-<br/>
-
 ---
 
 ## 🗺️ Roadmap
 
-| Version  | Feature                                      | Status     |
-| -------- | -------------------------------------------- | ---------- |
-| v1.0     | Dual servo joystick control + thermistor     | ✅ Done    |
-| v1.1     | Complementary servo motion logic             | ✅ Done    |
-| **v1.2** | **TPU 95A claw fingers for improved grip**   | 🔜 Next    |
-| v2.0     | Web dashboard (Serial → WebSocket → Browser) | 🔜 Planned |
+| Version  | Feature                                    | Status  |
+| -------- | ------------------------------------------ | ------- |
+| v1.0     | Dual servo joystick control + thermistor   | ✅ Done |
+| **v1.1** | **TPU 95A claw fingers for improved grip** | 🔜 Next |
 
 <br/>
 
