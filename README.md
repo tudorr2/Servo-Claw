@@ -3,23 +3,24 @@
 <br/>
 
 ```
-░██████╗███████╗██████╗░██╗   ██╗░█████╗░  ░█████╗░██╗░░░░░░█████╗░░██╗░░░░░░░██╗
-██╔════╝██╔════╝██╔══██╗██║   ██║██╔══██╗  ██╔══██╗██║░░░░░██╔══██╗░██║░░██╗░░██║
-╚█████╗░█████╗░░██████╔╝╚██╗░██╔╝██║░░██║  ██║░░╚═╝██║░░░░░███████║░╚██╗████╗██╔╝
-░╚═══██╗██╔══╝░░██╔══██╗░╚████╔╝░██║░░██║  ██║░░██╗██║░░░░░██╔══██║░░████╔═████║░
-██████╔╝███████╗██║░░██║░░╚██╔╝░░╚█████╔╝  ╚█████╔╝███████╗██║░░██║░░╚██╔╝░╚██╔╝░
-╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚════╝░  ░╚════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░
+████████╗██╗  ██╗███████╗██████╗░███╗░░░███╗░█████╗░░█████╗░██╗░░░░░░█████╗░░██╗░░░░░░░██╗
+╚══██╔══╝██║  ██║██╔════╝██╔══██╗████╗░████║██╔══██╗██╔══██╗██║░░░░░██╔══██╗░██║░░██╗░░██║
+░░░██║░░░███████║█████╗░░██████╔╝██╔████╔██║██║░░██║██║░░╚═╝██║░░░░░███████║░╚██╗████╗██╔╝
+░░░██║░░░██╔══██║██╔══╝░░██╔══██╗██║╚██╔╝██║██║░░██║██║░░██╗██║░░░░░██╔══██║░░████╔═████║░
+░░░██║░░░██║  ██║███████╗██║░░██║██║░╚═╝░██║╚█████╔╝╚█████╔╝███████╗██║░░██║░░╚██╔╝░╚██╔╝░
+░░░╚═╝░░░╚═╝  ╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░░░╚═╝░╚════╝░░╚════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░
 ```
 
-# SERVO · THERMAL CONTROLLER
+# THERMO · CLAW · CONTROLLER
 
-**Dual-axis servo control with real-time NTC thermistor monitoring**  
-_Arduino-based · Joystick driven · Web interface coming soon_
+**Handheld 3D printed claw controller with dual-axis servo control and real-time NTC thermistor monitoring**  
+_Arduino-based · Joystick driven · 3D Printed · Web interface coming soon_
 
 <br/>
 
 ![Arduino](https://img.shields.io/badge/Platform-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![C++](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![3D Printed](https://img.shields.io/badge/Build-3D_Printed-lightgrey?style=for-the-badge&logo=printables&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 ![Web UI](https://img.shields.io/badge/Web_UI-Coming_Soon-orange?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
@@ -34,9 +35,31 @@ _Arduino-based · Joystick driven · Web interface coming soon_
 
 ## ⚡ Overview
 
-A precision servo control system built on Arduino, capable of driving **two independent servos** from a single joystick axis with complementary motion logic — while simultaneously monitoring ambient temperature via a **10KΩ NTC thermistor** using the Steinhart-Hart B-parameter equation.
+ThermoClaw is a **handheld, 3D printed** servo claw controller built on Arduino. The enclosure and claw mechanism are fully 3D printed, housing dual servos driven from a single joystick axis with complementary motion logic — while simultaneously monitoring ambient temperature via a **10KΩ NTC thermistor** using the Steinhart-Hart B-parameter equation.
 
 A future revision will expose all sensor data (servo positions, live temperature) through a **browser-based web interface** for remote monitoring and control.
+
+<br/>
+
+---
+
+## 🖨️ 3D Printed Build
+
+The entire chassis is **3D printed** — designed to be compact, handheld, and self-contained.
+
+| Part                  | Material    | Notes                                   |
+| --------------------- | ----------- | --------------------------------------- |
+| Main body / enclosure | PLA or PETG | Rigid shell housing Arduino + servos    |
+| Claw fingers          | PLA or PETG | Current version                         |
+| **Claw fingers (v2)** | **TPU 95A** | **Upcoming — improves grip on objects** |
+
+> 🔜 **Next revision:** Claw fingers will be reprinted in **TPU 95A** (flexible filament) for a compliant, grippy surface that conforms around objects for a much more secure hold.
+
+### Print Tips
+
+- Print the body in **PETG** for better heat resistance near the electronics
+- TPU 95A fingers: print slow (~25mm/s), disable retraction, 3–4 perimeters for durability
+- The joystick and button should be accessible from the top face for one-handed operation
 
 <br/>
 
@@ -153,9 +176,13 @@ Expected ADC range at room temperature: **490 – 530**
 ## 📁 Project Structure
 
 ```
-servo-thermal-controller/
+thermoclaw/
 ├── src/
 │   └── main.ino          # Main Arduino sketch
+├── stl/
+│   ├── body.stl          # Main handheld enclosure
+│   ├── claw_pla.stl      # Current PLA claw fingers
+│   └── claw_tpu95a.stl   # 🔜 Upcoming TPU 95A grip fingers
 ├── docs/
 │   └── wiring.png        # Wiring diagram
 ├── web/                  # 🚧 Web interface (upcoming)
@@ -184,6 +211,19 @@ Planned features:
 ```
 Arduino (Serial) ──► Node.js bridge ──► WebSocket ──► Browser Dashboard
 ```
+
+<br/>
+
+---
+
+## 🗺️ Roadmap
+
+| Version  | Feature                                      | Status     |
+| -------- | -------------------------------------------- | ---------- |
+| v1.0     | Dual servo joystick control + thermistor     | ✅ Done    |
+| v1.1     | Complementary servo motion logic             | ✅ Done    |
+| **v1.2** | **TPU 95A claw fingers for improved grip**   | 🔜 Next    |
+| v2.0     | Web dashboard (Serial → WebSocket → Browser) | 🔜 Planned |
 
 <br/>
 
@@ -239,7 +279,7 @@ MIT License — see [`LICENSE`](LICENSE) for details.
 
 ---
 
-_Built with solder and spite · Web interface incoming_
+_3D printed · Handheld · Built with solder and spite · TPU claws & web interface incoming_
 
 ⭐ Star this repo if it helped you!
 
