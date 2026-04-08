@@ -14,7 +14,6 @@
 # THERMO · CLAW · CONTROLLER
 
 **Handheld 3D printed claw controller with dual servo control and real-time NTC thermistor monitoring**  
-_Arduino-based · Joystick driven · 3D Printed · Web interface coming soon_
 
 <br/>
 
