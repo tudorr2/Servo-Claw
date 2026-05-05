@@ -51,14 +51,6 @@ The entire chassis is **3D printed** — designed to be compact, handheld, and s
 | Claw fingers          | PLA or PETG | Current version                         |
 | **Claw fingers (v2)** | **TPU 95A** | **Upcoming — improves grip on objects** |
 
-> 🔜 **Next revision:** Claw fingers will be reprinted in **TPU 95A** (flexible filament) for a compliant, grippy surface that conforms around objects for a much more secure hold.
-
-### Print Tips
-
-- Print the body in **PETG** for better heat resistance near the electronics
-- TPU 95A fingers: print slow (~25mm/s), disable retraction, 3–4 perimeters for durability
-- The joystick and button should be accessible from the top face for one-handed operation
-
 <br/>
 
 ---
@@ -97,11 +89,6 @@ The thermistor uses a **voltage divider** configuration for optimal sensitivity 
          │
         GND
 ```
-
-> 💡 **Tip:** Add a **100nF ceramic capacitor** between `A2` and `GND` to filter ADC noise and reduce temperature jitter by 2–3°C.
-
-At 25°C, both resistors are equal → ADC reads ~**512** (perfect midpoint sensitivity).
-
 <br/>
 
 ---
@@ -168,62 +155,6 @@ Temperature:    24.73C
 Expected ADC range at room temperature: **490 – 530**
 
 ---
-
-## 🗺️ Roadmap
-
-| Version  | Feature                                    | Status  |
-| -------- | ------------------------------------------ | ------- |
-| v1.0     | Dual servo joystick control + thermistor   | ✅ Done |
-| **v1.1** | **TPU 95A claw fingers for improved grip** | 🔜 Next |
-
 <br/>
-
 ---
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Arduino IDE 1.8+ or Arduino IDE 2.x
-- `Servo.h` — included with Arduino IDE
-
-### Upload
-
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/servo-thermal-controller.git
-
-# Open in Arduino IDE
-# Select your board (Uno / Nano / Mega)
-# Select your COM port
-# Upload
-```
-
-### Monitor
-
-Open Serial Monitor at **9600 baud** to view live temperature readings.
-
-<br/>
-
----
-
-## 🐛 Troubleshooting
-
-| Symptom                       | Cause                                 | Fix                                          |
-| ----------------------------- | ------------------------------------- | -------------------------------------------- |
-| Temperature shows `-273.15°C` | ADC reads 0 — thermistor disconnected | Check wiring at `A2`                         |
-| ADC reads `0` or `1023`       | Open circuit in voltage divider       | Verify both thermistor and 10KΩ resistor     |
-| Servo not moving              | Wrong pin or not attached             | Check `servodr.attached()` in Serial Monitor |
-| Temperature jittery           | ADC noise                             | Add 100nF cap between `A2` and `GND`         |
-
-<br/>
-
-<div align="center">
-
----
-
-_3D printed · Handheld · Built with solder and spite · TPU claws & web interface incoming_
-
-⭐ Star this repo if it helped you!
-
 </div>
