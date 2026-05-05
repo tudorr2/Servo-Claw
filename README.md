@@ -156,5 +156,5 @@ Expected ADC range at room temperature: **490 – 530**
 
 ---
 <br/>
----
+
 </div>
