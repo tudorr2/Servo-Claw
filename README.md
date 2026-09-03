@@ -80,7 +80,7 @@ The thermistor uses a **voltage divider** configuration for optimal sensitivity 
 <div align="center"> <img src="photo/temp.png" width="700"> </div>
 
 ```
-        5V
+        3V3
          │
     ┌────┴────┐
     │ NTC 10K │   ← Thermistor (not polarized)
