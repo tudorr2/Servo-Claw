@@ -77,7 +77,7 @@ The entire chassis is **3D printed** — designed to be compact, handheld, and s
 
 The thermistor uses a **voltage divider** configuration for optimal sensitivity in the room-temperature range:
 
-<div align="center"> <img src="photo/temp.jpeg" width="700"> </div>
+<div align="center"> <img src="photo/temp.png" width="700"> </div>
 
 ```
         5V
