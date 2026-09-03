@@ -37,6 +37,8 @@ ThermoClaw is a **handheld, 3D printed** servo claw controller. The enclosure an
 
 A future revision will expose all sensor data (servo positions, live temperature) through a **browser-based web interface** for remote monitoring and control.
 
+<div align="center"> <img src="photo/arm.jpeg" width="700"> </div>
+
 <br/>
 
 ---
@@ -44,6 +46,8 @@ A future revision will expose all sensor data (servo positions, live temperature
 ## 🖨️ 3D Printed Build
 
 The entire chassis is **3D printed** — designed to be compact, handheld, and self-contained.
+
+<div align="center"> <img src="photo/3d.jpeg" width="700"> </div>
 
 | Part                  | Material    | Notes                                   |
 | --------------------- | ----------- | --------------------------------------- |
@@ -73,6 +77,8 @@ The entire chassis is **3D printed** — designed to be compact, handheld, and s
 ## 🌡️ Thermistor Wiring
 
 The thermistor uses a **voltage divider** configuration for optimal sensitivity in the room-temperature range:
+
+<div align="center"> <img src="photo/temp.jpeg" width="700"> </div>
 
 ```
         5V
