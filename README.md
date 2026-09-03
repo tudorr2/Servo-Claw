@@ -33,9 +33,9 @@
 
 ## ⚡ Overview
 
-ThermoClaw is a **handheld, 3D printed** servo claw controller. The enclosure and claw mechanism are fully 3D printed, housing dual servos driven from a single joystick axis with complementary motion logic — while simultaneously monitoring ambient temperature via a **10KΩ NTC thermistor** using the Steinhart-Hart B-parameter equation.
+ThermoClaw is a **handheld, 3D printed** servo claw controller based on an Raspberry Pi Pico. The enclosure and claw mechanism are fully 3D printed, housing a single servo driven from a single joystick axis with complementary motion logic — while simultaneously monitoring ambient temperature via a **10KΩ NTC thermistor** using the Steinhart-Hart B-parameter equation.
 
-A future revision will expose all sensor data (servo positions, live temperature) through a **browser-based web interface** for remote monitoring and control.
+A future version will expose all sensor data (servo positions, live temperature) through a **browser-based web interface** for remote monitoring and control.
 
 <div align="center"> <img src="photo/arm.jpeg" width="700"> </div>
 
@@ -47,13 +47,13 @@ A future revision will expose all sensor data (servo positions, live temperature
 
 The entire chassis is **3D printed** — designed to be compact, handheld, and self-contained.
 
-<div align="center"> <img src="photo/3d.jpeg" width="700"> </div>
+<div align="center"> <img src="photo/3d.png" width="700"> </div>
 
 | Part                  | Material    | Notes                                   |
 | --------------------- | ----------- | --------------------------------------- |
 | Main body / enclosure | PLA or PETG | Rigid shell housing Arduino + servos    |
 | Claw fingers          | PLA or PETG | Current version                         |
-| **Claw fingers (v2)** | **TPU 95A** | **Upcoming — improves grip on objects** |
+| Claw fingers          | PLA or PETG | **Upcoming — improves grip on objects** |
 
 <br/>
 
@@ -63,11 +63,10 @@ The entire chassis is **3D printed** — designed to be compact, handheld, and s
 
 | Component         | Value / Model                 | Pin  |
 | ----------------- | ----------------------------- | ---- |
-| Servo             | Standard PWM Servo            | `D2` |
-| Servo             | Standard PWM Servo            | `D4` |
-| Joystick (X-axis) | Analog joystick               | `A0` |
-| Mode Switch       | Momentary button (active LOW) | `D3` |
-| NTC Thermistor    | 10KΩ @ 25°C, B=3977K          | `A1` |
+| Servo             | Standard PWM Servo            | `22` |
+| Joystick (X-axis) | Analog joystick               | `A1` |
+| Mode Switch       | Momentary button (active LOW) | `5` |
+| NTC Thermistor    | 10KΩ @ 25°C, B=3977K          | `A0` |
 | Fixed Resistor    | 10KΩ (voltage divider)        | —    |
 
 <br/>
@@ -103,18 +102,11 @@ The thermistor uses a **voltage divider** configuration for optimal sensitivity 
 
 ### Normal Mode
 
-The joystick X-axis (`A5`) maps `0–1023` → `0°–180°` for the drive servo.  
-The steer servo runs **complementary** (mirrored): `abs(val - 180)`
+The joystick X-axis (`A1`) maps `0–1023` → `0°–180°` to control de servo.  
 
-```
-Joystick 0%   →  Drive: 0°    Steer: 180°
-Joystick 50%  →  Drive: 90°   Steer: 90°
-Joystick 100% →  Drive: 180°  Steer: 0°
-```
+### Button Mode (`5` held LOW)
 
-### Button Mode (`D3` held LOW)
-
-Both servos lock to **90°** (neutral / center position).
+The servo locks to **170°** .
 
 <br/>
 
@@ -151,16 +143,6 @@ RT  = (VR / VRT) * R;                     // thermistor resistance
 
 ---
 
-## 💻 Serial Output
-
-```
-Raw ADC: 514
-Temperature:    24.73C
-```
-
-Expected ADC range at room temperature: **490 – 530**
-
----
 <br/>
 
 </div>
